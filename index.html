@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="数字花园 — 一个用代码浇灌的个人空间">
+  <title>数字花园 🌿 Digital Garden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== 粒子背景 Canvas ========== -->
+  <canvas id="particles"></canvas>
+
+  <!-- ========== 导航栏 ========== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Digital Garden</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">首页</a></li>
+        <li><a href="#about" class="nav-link">关于</a></li>
+        <li><a href="#projects" class="nav-link">项目</a></li>
+        <li><a href="#skills" class="nav-link">技能</a></li>
+        <li><a href="#contact" class="nav-link">联系</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="切换主题">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button id="menuToggle" class="menu-toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero 区域 ========== -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>欢迎来到我的数字花园</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="gradient-text">种植代码</span><br>
+        <span class="hero-subtitle-text">收获星辰 ✨</span>
+      </h1>
+      <p class="hero-desc">
+        这里是我用代码浇灌的花园 — 每一行代码都是一颗种子，<br>
+        每一个项目都是一朵盛开的花。用 GitHub Pages 搭建，随时生长。
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <span>浏览项目</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary">联系我</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="42">0</span>
+          <span class="stat-label">项目</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="156">0</span>
+          <span class="stat-label">提交</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="7">0</span>
+          <span class="stat-label">仓库</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-decoration">
+      <div class="floating-card card-1">
+        <div class="card-icon">🚀</div>
+        <div class="card-label">Deploy</div>
+        <div class="card-value">GitHub Pages</div>
+      </div>
+      <div class="floating-card card-2">
+        <div class="card-icon">⚡</div>
+        <div class="card-label">Speed</div>
+        <div class="card-value">100 / 100</div>
+      </div>
+      <div class="floating-card card-3">
+        <div class="card-icon">📱</div>
+        <div class="card-label">Responsive</div>
+        <div class="card-value">All Devices</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>向下滚动</span>
+      <div class="mouse"><div class="wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ========== 关于 ========== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 / 关于</span>
+        <h2 class="section-title">我是谁？</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            一个热爱创造的开发者，相信代码不仅是工具，更是表达想法的方式。
+          </p>
+          <p>
+            我喜欢把复杂的问题拆解成简洁的方案，用优雅的代码构建有用的东西。
+            从前端到后端，从设计到部署，享受创造的每一个环节。
+          </p>
+          <p>
+            这个网站本身就是用纯 <code>HTML</code> / <code>CSS</code> / <code>JavaScript</code> 编写，
+            部署在 <strong>GitHub Pages</strong> 上 — 零成本、零依赖、无限可能。
+          </p>
+          <div class="about-tags">
+            <span class="tag">#前端开发</span>
+            <span class="tag">#全栈</span>
+            <span class="tag">#开源爱好者</span>
+            <span class="tag">#终身学习</span>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="code-window">
+            <div class="code-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-title">about.js</span>
+            </div>
+            <pre class="code-body"><code><span class="kw">const</span> <span class="var">developer</span> = {
+  <span class="prop">name</span>: <span class="str">'数字花园'</span>,
+  <span class="prop">role</span>: <span class="str">'Full-Stack Developer'</span>,
+  <span class="prop">skills</span>: [<span class="str">'JS'</span>, <span class="str">'Python'</span>, <span class="str">'Go'</span>],
+  <span class="prop">passion</span>: <span class="str">'building things'</span>,
+  <span class="prop">coffee</span>: <span class="num">Infinity</span>,
+  <span class="prop">greet</span>() {
+    <span class="kw">return</span> <span class="str">'Hello, World! 👋'</span>;
+  }
+};
+
+<span class="comment">// 欢迎来到我的花园 🌿</span>
+<span class="var">console</span>.log(developer.<span class="prop">greet</span>());</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 项目展示 ========== -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 / 项目</span>
+        <h2 class="section-title">精选作品</h2>
+      </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="tool">工具</button>
+        <button class="filter-btn" data-filter="design">设计</button>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ========== 技能 ========== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 / 技能</span>
+        <h2 class="section-title">技术栈</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-cat-title">🎨 前端</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>HTML / CSS</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>JavaScript</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>React / Vue</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title">⚙️ 后端</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Node.js</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Python</span><span class="skill-pct">82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Go</span><span class="skill-pct">70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title">🛠️ 工具 & 运维</h3>
+          <div class="skill-item">
+            <div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>Docker</span><span class="skill-pct">78%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><span>CI/CD</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 联系 ========== -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 / 联系</span>
+        <h2 class="section-title">一起创造吧</h2>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-cards">
+          <a href="https://github.com" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="contact-info">
+              <h4>GitHub</h4>
+              <p>查看我的代码</p>
+            </div>
+          </a>
+          <a href="mailto:hello@example.com" class="contact-card">
+            <div class="contact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info">
+              <h4>Email</h4>
+              <p>hello@example.com</p>
+            </div>
+          </a>
+          <a href="#" class="contact-card" onclick="copyLink(event)">
+            <div class="contact-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="contact-info">
+              <h4>复制链接</h4>
+              <p>分享这个网站</p>
+            </div>
+          </a>
+        </div>
+        <div class="contact-cta">
+          <h3>有想法想聊聊？</h3>
+          <p>不管是合作、交流还是随便聊聊技术，都欢迎联系我。</p>
+          <a href="mailto:hello@example.com" class="btn btn-primary">
+            <span>发送邮件</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">🌿</span>
+        <span>Digital Garden</span>
+      </div>
+      <p class="footer-text">用 ❤️ 和 GitHub Pages 构建 · 2026</p>
+      <a href="#hero" class="back-to-top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
